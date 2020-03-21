@@ -60,11 +60,24 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="DataAccess\Repositories\BaseRepository.cs" />
+    <Compile Include="DataAccess\Repositories\DbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\Repositories\Barang\" />
+    <Folder Include="DataAccess\Repositories\StokBarang\" />
+    <Folder Include="DataAccess\Repositories\TipeBarang\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RumahScarlett2.CommonComponents\RumahScarlett2.CommonComponents.csproj">
+      <Project>{36a275e2-ab6b-4372-ad6c-29e3e4122e4a}</Project>
+      <Name>RumahScarlett2.CommonComponents</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

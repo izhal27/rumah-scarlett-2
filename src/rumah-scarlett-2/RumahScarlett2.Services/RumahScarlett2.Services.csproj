@@ -53,6 +53,9 @@
     <Compile Include="Services\Barang\BarangServices.cs" />
     <Compile Include="Services\Barang\IBarangRepository.cs" />
     <Compile Include="Services\Barang\IBarangServices.cs" />
+    <Compile Include="Services\StokBarang\IStokBarangRepository.cs" />
+    <Compile Include="Services\StokBarang\IStokBarangServices.cs" />
+    <Compile Include="Services\StokBarang\StokBarangServices.cs" />
     <Compile Include="Services\TipeBarang\ITipeBarangRepository.cs" />
     <Compile Include="Services\TipeBarang\ITipeBarangServices.cs" />
     <Compile Include="Services\TipeBarang\TipeBarangServices.cs" />
@@ -63,9 +66,7 @@
       <Name>RumahScarlett2.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\StokBarang\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
