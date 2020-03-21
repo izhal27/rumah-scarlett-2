@@ -95,7 +95,7 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories
       return isConnected;
     }
 
-    public void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
+    public void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Serializable)
     {
       if (_transaction == null)
       {
