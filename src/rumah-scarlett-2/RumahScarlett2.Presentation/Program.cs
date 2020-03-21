@@ -1,10 +1,11 @@
-﻿using System;
+﻿using RumahScarlett2.Presentation.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace rumah_scarlett_2
+namespace RumahScarlett2.Presentation
 {
    static class Program
    {
@@ -16,7 +17,7 @@ namespace rumah_scarlett_2
       {
          Application.EnableVisualStyles();
          Application.SetCompatibleTextRenderingDefault(false);
-         Application.Run(new MainForm());
+         Application.Run(new MainView());
       }
    }
 }
