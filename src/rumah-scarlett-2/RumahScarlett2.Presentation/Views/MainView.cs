@@ -13,16 +13,8 @@ namespace RumahScarlett2.Presentation.Views
 {
   public partial class MainView : DockContent, IMainView
   {
-<<<<<<< HEAD
     private DockPanel _dockPanel;
     private MainViewEventArgs _eventArgs;
-=======
-    public MenuStrip MenuStrip => throw new NotImplementedException();
-
-    public ToolStrip ToolStrip => throw new NotImplementedException();
-
-    public StatusStrip StatusStrip => throw new NotImplementedException();
->>>>>>> refs/remotes/origin/master
 
     public event EventHandler OnViewLoad;
     public event EventHandler<MainViewEventArgs> OnTipeViewClick;
@@ -33,7 +25,6 @@ namespace RumahScarlett2.Presentation.Views
     public MainView()
     {
       InitializeComponent();
-<<<<<<< HEAD
 
       _dockPanel = new DockPanel();
       _dockPanel.Parent = this;
@@ -100,9 +91,5 @@ namespace RumahScarlett2.Presentation.Views
     {
       Application.Exit();
     }
-=======
-    }
-
->>>>>>> refs/remotes/origin/master
   }
 }
