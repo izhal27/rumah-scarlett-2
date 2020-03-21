@@ -34,6 +34,7 @@
       this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
       this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
       this.tipeBarangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.barangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.stokBarangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +45,16 @@
       this.barangToolStripButton = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.exitToolStripButton = new System.Windows.Forms.ToolStripButton();
+=======
+      this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
+      this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.toolStrip = new System.Windows.Forms.ToolStrip();
+      this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
+      this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
+      this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+      this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+      this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
+>>>>>>> refs/remotes/origin/master
       this.statusStrip = new System.Windows.Forms.StatusStrip();
       this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
       this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -78,6 +89,7 @@
       this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
       this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.exitToolStripMenuItem.Text = "E&xit";
+<<<<<<< HEAD
       this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
       // 
       // toolsMenu
@@ -86,10 +98,16 @@
             this.tipeBarangToolStripMenuItem,
             this.barangToolStripMenuItem,
             this.stokBarangToolStripMenuItem});
+=======
+      // 
+      // toolsMenu
+      // 
+>>>>>>> refs/remotes/origin/master
       this.toolsMenu.Name = "toolsMenu";
       this.toolsMenu.Size = new System.Drawing.Size(43, 20);
       this.toolsMenu.Text = "&Data";
       // 
+<<<<<<< HEAD
       // tipeBarangToolStripMenuItem
       // 
       this.tipeBarangToolStripMenuItem.Name = "tipeBarangToolStripMenuItem";
@@ -111,6 +129,8 @@
       this.stokBarangToolStripMenuItem.Text = "&Stok Barang";
       this.stokBarangToolStripMenuItem.Click += new System.EventHandler(this.stokBarangToolStripMenuItem_Click);
       // 
+=======
+>>>>>>> refs/remotes/origin/master
       // helpMenu
       // 
       this.helpMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -124,21 +144,33 @@
       this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
       this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
       this.aboutToolStripMenuItem.Text = "&About ... ...";
+<<<<<<< HEAD
       this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+=======
+>>>>>>> refs/remotes/origin/master
       // 
       // toolStrip
       // 
       this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+<<<<<<< HEAD
             this.stokBarangToolStripButton,
             this.barangToolStripButton,
             this.toolStripSeparator1,
             this.exitToolStripButton});
+=======
+            this.newToolStripButton,
+            this.openToolStripButton,
+            this.saveToolStripButton,
+            this.toolStripSeparator1,
+            this.printToolStripButton});
+>>>>>>> refs/remotes/origin/master
       this.toolStrip.Location = new System.Drawing.Point(0, 24);
       this.toolStrip.Name = "toolStrip";
       this.toolStrip.Size = new System.Drawing.Size(632, 25);
       this.toolStrip.TabIndex = 1;
       this.toolStrip.Text = "ToolStrip";
       // 
+<<<<<<< HEAD
       // stokBarangToolStripButton
       // 
       this.stokBarangToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -158,12 +190,41 @@
       this.barangToolStripButton.Size = new System.Drawing.Size(23, 22);
       this.barangToolStripButton.Text = "Barang";
       this.barangToolStripButton.Click += new System.EventHandler(this.barangToolStripButton_Click);
+=======
+      // newToolStripButton
+      // 
+      this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
+      this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
+      this.newToolStripButton.Name = "newToolStripButton";
+      this.newToolStripButton.Size = new System.Drawing.Size(23, 22);
+      this.newToolStripButton.Text = "New";
+      // 
+      // openToolStripButton
+      // 
+      this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
+      this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
+      this.openToolStripButton.Name = "openToolStripButton";
+      this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
+      this.openToolStripButton.Text = "Open";
+      // 
+      // saveToolStripButton
+      // 
+      this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+      this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
+      this.saveToolStripButton.Name = "saveToolStripButton";
+      this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+      this.saveToolStripButton.Text = "Save";
+>>>>>>> refs/remotes/origin/master
       // 
       // toolStripSeparator1
       // 
       this.toolStripSeparator1.Name = "toolStripSeparator1";
       this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
       // 
+<<<<<<< HEAD
       // exitToolStripButton
       // 
       this.exitToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -173,6 +234,16 @@
       this.exitToolStripButton.Size = new System.Drawing.Size(23, 22);
       this.exitToolStripButton.Text = "Exit";
       this.exitToolStripButton.Click += new System.EventHandler(this.exitToolStripButton_Click);
+=======
+      // printToolStripButton
+      // 
+      this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
+      this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
+      this.printToolStripButton.Name = "printToolStripButton";
+      this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
+      this.printToolStripButton.Text = "Print";
+>>>>>>> refs/remotes/origin/master
       // 
       // statusStrip
       // 
@@ -204,7 +275,10 @@
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "RUMAH SCARLETT";
       this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+<<<<<<< HEAD
       this.Load += new System.EventHandler(this.MainView_Load);
+=======
+>>>>>>> refs/remotes/origin/master
       this.menuStrip.ResumeLayout(false);
       this.menuStrip.PerformLayout();
       this.toolStrip.ResumeLayout(false);
@@ -228,6 +302,7 @@
     private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem toolsMenu;
     private System.Windows.Forms.ToolStripMenuItem helpMenu;
+<<<<<<< HEAD
     private System.Windows.Forms.ToolStripButton stokBarangToolStripButton;
     private System.Windows.Forms.ToolStripButton barangToolStripButton;
     private System.Windows.Forms.ToolStripButton exitToolStripButton;
@@ -236,6 +311,14 @@
         private System.Windows.Forms.ToolStripMenuItem barangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stokBarangToolStripMenuItem;
     }
+=======
+    private System.Windows.Forms.ToolStripButton newToolStripButton;
+    private System.Windows.Forms.ToolStripButton openToolStripButton;
+    private System.Windows.Forms.ToolStripButton saveToolStripButton;
+    private System.Windows.Forms.ToolStripButton printToolStripButton;
+    private System.Windows.Forms.ToolTip toolTip;
+  }
+>>>>>>> refs/remotes/origin/master
 }
 
 
