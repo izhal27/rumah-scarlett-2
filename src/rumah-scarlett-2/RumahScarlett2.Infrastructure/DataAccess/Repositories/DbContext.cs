@@ -9,6 +9,7 @@ using Dapper.Contrib;
 using System.Configuration;
 using RumahScarlett2.CommonComponents;
 using System.Data.SqlClient;
+using Microsoft.Data.Sqlite;
 
 namespace RumahScarlett2.Infrastructure.DataAccess.Repositories
 {
@@ -17,7 +18,7 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories
     private IDbConnection _conn;
     private IDbTransaction _transaction;
     private readonly string _connString;
-    private static readonly string _providerName = @"SQLitePCLRaw.core";
+    private static readonly string _providerName = @"System.Data";
 
     public IDbConnection Conn
     {
@@ -41,7 +42,7 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories
 
     public DbContext(string location, string file)
     {
-      location = !string.IsNullOrWhiteSpace(location) ? location : "Environment.CurrentDirectory";
+      location = !string.IsNullOrWhiteSpace(location) ? location : Environment.CurrentDirectory;
       file = !string.IsNullOrWhiteSpace(file) ? file : "db_rs.db";
 
       _connString = $@"Data Source={location}\{file};";
@@ -59,8 +60,8 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories
 
       try
       {
-        var provider = DbProviderFactories.GetFactory(providerName);
-        conn = provider.CreateConnection();
+        //var provider = DbProviderFactories.GetFactory(providerName);
+        conn = new SqliteConnection();
         conn.ConnectionString = connString;
         conn.Open();
       }
