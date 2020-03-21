@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RumahScarlett2.Domain.Models.TipeBarang
 {
-    [Table("tipe")]
+    [Table("tipe_barang")]
     public class TipeBarangModel : ITipeBarangModel
     {
         [Browsable(false)]
