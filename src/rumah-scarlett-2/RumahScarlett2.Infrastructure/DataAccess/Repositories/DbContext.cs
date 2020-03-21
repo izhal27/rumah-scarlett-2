@@ -18,11 +18,10 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories
     private IDbConnection _conn;
     private IDbTransaction _transaction;
     private readonly string _connString;
-    private static readonly string _providerName = @"System.Data";
 
     public IDbConnection Conn
     {
-      get { return _conn ?? (_conn = GetOpenConnection(_connString, _providerName)); }
+      get { return _conn ?? (_conn = GetOpenConnection(_connString)); }
     }
 
     public IDbTransaction Transaction
@@ -36,7 +35,7 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories
 
       if (_conn == null)
       {
-        _conn = GetOpenConnection(_connString, _providerName);
+        _conn = GetOpenConnection(_connString);
       }
     }
 
@@ -49,11 +48,11 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories
 
       if (_conn == null)
       {
-        _conn = GetOpenConnection(_connString, _providerName);
+        _conn = GetOpenConnection(_connString);
       }
     }
 
-    private IDbConnection GetOpenConnection(string connString, string providerName)
+    private IDbConnection GetOpenConnection(string connString)
     {
       IDbConnection conn = null;
       var dataAccessStatus = new DataAccessStatus();
@@ -84,7 +83,7 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories
 
       try
       {
-        using (var conn = GetOpenConnection(_connString, _providerName))
+        using (var conn = GetOpenConnection(_connString))
         {
           isConnected = conn.State == ConnectionState.Open;
         }
