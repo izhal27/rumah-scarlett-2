@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RumahScarlett2.Presentation", "RumahScarlett2.Presentation\RumahScarlett2.Presentation.csproj", "{D24679E0-7B13-4716-AB02-CAF8C021A86B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RumahScarlett2.Services", "RumahScarlett2.Services\RumahScarlett2.Services.csproj", "{DB5488FA-91D0-4BB5-B0B9-C8BD9534E5DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RumahScarlett2.Infrastructure", "RumahScarlett2.Infrastructure\RumahScarlett2.Infrastructure.csproj", "{31D82AD5-BB66-4C3E-81F7-2DC37660A33B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RumahScarlett2.Domain", "RumahScarlett2.Domain\RumahScarlett2.Domain.csproj", "{554D8A8B-4A94-4F2E-9A54-ECA0FE4D651A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RumahScarlett2.Services.UnitTests", "RumahScarlett2.Services.UnitTests\RumahScarlett2.Services.UnitTests.csproj", "{9E5F018C-A064-4C61-94E3-B155B665E8F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{431B3EE2-D33E-4BB3-8E2C-8FF6051BA33B}"
+	ProjectSection(SolutionItems) = preProject
+		VersionInfo.cs = VersionInfo.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RumahScarlett2.CommonComponents", "RumahScarlett2.CommonComponents\RumahScarlett2.CommonComponents.csproj", "{36A275E2-AB6B-4372-AD6C-29E3E4122E4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D24679E0-7B13-4716-AB02-CAF8C021A86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D24679E0-7B13-4716-AB02-CAF8C021A86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D24679E0-7B13-4716-AB02-CAF8C021A86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D24679E0-7B13-4716-AB02-CAF8C021A86B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB5488FA-91D0-4BB5-B0B9-C8BD9534E5DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB5488FA-91D0-4BB5-B0B9-C8BD9534E5DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB5488FA-91D0-4BB5-B0B9-C8BD9534E5DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB5488FA-91D0-4BB5-B0B9-C8BD9534E5DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31D82AD5-BB66-4C3E-81F7-2DC37660A33B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31D82AD5-BB66-4C3E-81F7-2DC37660A33B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31D82AD5-BB66-4C3E-81F7-2DC37660A33B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31D82AD5-BB66-4C3E-81F7-2DC37660A33B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{554D8A8B-4A94-4F2E-9A54-ECA0FE4D651A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554D8A8B-4A94-4F2E-9A54-ECA0FE4D651A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554D8A8B-4A94-4F2E-9A54-ECA0FE4D651A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554D8A8B-4A94-4F2E-9A54-ECA0FE4D651A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E5F018C-A064-4C61-94E3-B155B665E8F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E5F018C-A064-4C61-94E3-B155B665E8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E5F018C-A064-4C61-94E3-B155B665E8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E5F018C-A064-4C61-94E3-B155B665E8F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36A275E2-AB6B-4372-AD6C-29E3E4122E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36A275E2-AB6B-4372-AD6C-29E3E4122E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36A275E2-AB6B-4372-AD6C-29E3E4122E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36A275E2-AB6B-4372-AD6C-29E3E4122E4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
