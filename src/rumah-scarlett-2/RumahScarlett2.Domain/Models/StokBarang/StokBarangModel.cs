@@ -21,7 +21,7 @@ namespace RumahScarlett2.Domain.Models.StokBarang
         [Display(Name = "Barang ID")]
         public int barang_id { get; set; }
 
-        [DisplayFormat(DataFormatString = "dd/MM/yyyy HH:mm")]
+        [DisplayFormat(DataFormatString = "dd/MM/yyyy")]
         [Display(Name = "Tanggal")]
         public DateTime tanggal { get; set; }
         

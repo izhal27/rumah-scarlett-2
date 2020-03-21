@@ -1,42 +1,53 @@
-﻿using System;
+﻿using RumahScarlett2.Domain.Models.StokBarang;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RumahScarlett2.Domain.Models.StokBarang;
 
 namespace RumahScarlett2.Services.Services.StokBarang
 {
-    public class StokBarangServices : IStokBarangServices
+  public class StokBarangServices : IStokBarangServices
+  {
+    private IStokBarangRepository _repo;
+    private IModelDataAnnotationCheck _modelDAC;
+
+    public StokBarangServices(IStokBarangRepository repo, IModelDataAnnotationCheck modelDAC)
     {
-        public void Insert(IStokBarangModel model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(IStokBarangModel model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(IStokBarangModel model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IStokBarangModel GetById(object id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<IStokBarangModel> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ValidateModel(IStokBarangModel model)
-        {
-            throw new NotImplementedException();
-        }
+      _repo = repo;
+      _modelDAC = modelDAC;
     }
+
+    public void Insert(IStokBarangModel model)
+    {
+      ValidateModel(model);
+      _repo.Insert(model);
+    }
+
+    public void Update(IStokBarangModel model)
+    {
+      ValidateModel(model);
+      _repo.Update(model);
+    }
+
+    public void Delete(IStokBarangModel model)
+    {
+      _repo.Delete(model);
+    }
+
+    public IEnumerable<IStokBarangModel> GetAll()
+    {
+      return _repo.GetAll();
+    }
+
+    public IStokBarangModel GetById(object id)
+    {
+      return _repo.GetById(id);
+    }
+
+    public void ValidateModel(IStokBarangModel model)
+    {
+      _modelDAC.ValidateModel(model);
+    }
+  }
 }
