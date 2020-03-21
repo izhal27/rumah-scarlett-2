@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WeifenLuo.WinFormsUI.Docking;
 
-namespace rumah_scarlett_2
+namespace RumahScarlett2.Presentation.Views.CommonControls
 {
-   public partial class MainForm : Form
+   public partial class BaseDataView : DockContent
    {
-      public MainForm()
+      public BaseDataView()
       {
          InitializeComponent();
+      }
+
+      protected virtual void BaseDataView_Load(object sender, EventArgs e)
+      {
+
       }
    }
 }

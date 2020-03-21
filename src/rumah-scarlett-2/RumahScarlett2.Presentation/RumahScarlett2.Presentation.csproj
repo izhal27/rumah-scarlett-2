@@ -7,8 +7,8 @@
     <ProjectGuid>{D24679E0-7B13-4716-AB02-CAF8C021A86B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>rumah_scarlett_2</RootNamespace>
-    <AssemblyName>rumah-scarlett-2</AssemblyName>
+    <RootNamespace>RumahScarlett2.Presentation</RootNamespace>
+    <AssemblyName>RumahScarlett2.Presentation</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,8 +34,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Syncfusion.Core.WinForms, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Data.WinForms, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.GridCommon.WinForms, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfInput.WinForms, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.SfListView.WinForms, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Shared.Base, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,14 +66,69 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>VersionInfo.cs</Link>
     </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Helper\Extensions.cs" />
+    <Compile Include="Helper\Messages.cs" />
+    <Compile Include="Helper\WaitCursorHandler.cs" />
+    <Compile Include="Presenters\IBasePresenter.cs" />
+    <Compile Include="Presenters\IMainPresenter.cs" />
+    <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\CommonControls\BaseDataView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CommonControls\BaseDataView.designer.cs">
+      <DependentUpon>BaseDataView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CommonControls\BaseEntryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CommonControls\BaseEntryView.designer.cs">
+      <DependentUpon>BaseEntryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CommonControls\BaseTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\CommonControls\BaseTextBoxDigit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\CommonControls\CRUDButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CommonControls\CRUDButtons.designer.cs">
+      <DependentUpon>CRUDButtons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CommonControls\ListDataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\CommonControls\OperationButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CommonControls\OperationButtons.designer.cs">
+      <DependentUpon>OperationButtons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CommonControls\PanelUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CommonControls\PanelUp.designer.cs">
+      <DependentUpon>PanelUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IDataView.cs" />
+    <Compile Include="Views\IEntryView.cs" />
+    <Compile Include="Views\IMainView.cs" />
+    <Compile Include="Views\IView.cs" />
+    <Compile Include="Views\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModelControls\ComboBoxTipeBarang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ModelControls\ComboBoxTipeBarang.designer.cs">
+      <DependentUpon>ComboBoxTipeBarang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,6 +139,27 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\CommonControls\BaseDataView.resx">
+      <DependentUpon>BaseDataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CommonControls\BaseEntryView.resx">
+      <DependentUpon>BaseEntryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CommonControls\CRUDButtons.resx">
+      <DependentUpon>CRUDButtons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CommonControls\OperationButtons.resx">
+      <DependentUpon>OperationButtons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CommonControls\PanelUp.resx">
+      <DependentUpon>PanelUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ModelControls\ComboBoxTipeBarang.resx">
+      <DependentUpon>ComboBoxTipeBarang.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -85,6 +173,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RumahScarlett2.CommonComponents\RumahScarlett2.CommonComponents.csproj">
+      <Project>{36A275E2-AB6B-4372-AD6C-29E3E4122E4A}</Project>
+      <Name>RumahScarlett2.CommonComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RumahScarlett2.Domain\RumahScarlett2.Domain.csproj">
+      <Project>{554d8a8b-4a94-4f2e-9a54-eca0fe4d651a}</Project>
+      <Name>RumahScarlett2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RumahScarlett2.Infrastructure\RumahScarlett2.Infrastructure.csproj">
+      <Project>{31d82ad5-bb66-4c3e-81f7-2dc37660a33b}</Project>
+      <Name>RumahScarlett2.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RumahScarlett2.Services\RumahScarlett2.Services.csproj">
+      <Project>{db5488fa-91d0-4bb5-b0b9-c8bd9534e5da}</Project>
+      <Name>RumahScarlett2.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
