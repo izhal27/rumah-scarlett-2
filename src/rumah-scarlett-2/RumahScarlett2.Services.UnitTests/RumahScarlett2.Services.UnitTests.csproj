@@ -60,6 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Barang\BarangServicesDataAccessTests.cs" />
+    <Compile Include="Barang\BarangServicesFixture.cs" />
+    <Compile Include="Barang\BarangServicesValidationTests.cs" />
     <Compile Include="BaseServicesFixture.cs" />
     <Compile Include="CommonTests\TestsHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

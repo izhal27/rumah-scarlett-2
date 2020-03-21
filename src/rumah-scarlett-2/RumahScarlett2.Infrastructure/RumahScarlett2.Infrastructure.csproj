@@ -113,6 +113,7 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="DataAccess\Repositories\Barang\BarangRepository.cs" />
     <Compile Include="DataAccess\Repositories\BaseRepository.cs" />
     <Compile Include="DataAccess\Repositories\DbContext.cs" />
     <Compile Include="DataAccess\Repositories\TipeBarang\TipeBarangRepository.cs" />
