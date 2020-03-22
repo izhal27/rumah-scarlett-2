@@ -45,6 +45,11 @@ namespace RumahScarlett2.Services.Services.StokBarang
       return _repo.GetById(id);
     }
 
+    public IEnumerable<IStokBarangModel> GetByBarangId(object id)
+    {
+      return _repo.GetByBarangId(id);
+    }
+
     public void ValidateModel(IStokBarangModel model)
     {
       _modelDAC.ValidateModel(model);

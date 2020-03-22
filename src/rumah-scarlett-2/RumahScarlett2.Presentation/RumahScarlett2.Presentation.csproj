@@ -77,6 +77,8 @@
     <Compile Include="Presenters\IBasePresenter.cs" />
     <Compile Include="Presenters\IMainPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
+    <Compile Include="Presenters\StokBarang\IStokBarangPresenter.cs" />
+    <Compile Include="Presenters\StokBarang\StokBarangPresenter.cs" />
     <Compile Include="Presenters\TipeBarang\ITipeBarangPresenter.cs" />
     <Compile Include="Presenters\TipeBarang\TipeBarangPresenter.cs" />
     <Compile Include="Program.cs" />
@@ -150,6 +152,20 @@
     <Compile Include="Views\ModelControls\ComboBoxTipeBarang.designer.cs">
       <DependentUpon>ComboBoxTipeBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\StokBarang\IStokBarangEntryView.cs" />
+    <Compile Include="Views\StokBarang\IStokBarangView.cs" />
+    <Compile Include="Views\StokBarang\StokBarangEntryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StokBarang\StokBarangEntryView.designer.cs">
+      <DependentUpon>StokBarangEntryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StokBarang\StokBarangView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StokBarang\StokBarangView.designer.cs">
+      <DependentUpon>StokBarangView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TipeBarang\ITipeBarangEntryView.cs" />
     <Compile Include="Views\TipeBarang\ITipeBarangView.cs" />
     <Compile Include="Views\TipeBarang\TipeBarangEntryView.cs">
@@ -200,6 +216,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ModelControls\ComboBoxTipeBarang.resx">
       <DependentUpon>ComboBoxTipeBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StokBarang\StokBarangEntryView.resx">
+      <DependentUpon>StokBarangEntryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StokBarang\StokBarangView.resx">
+      <DependentUpon>StokBarangView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TipeBarang\TipeBarangEntryView.resx">
       <DependentUpon>TipeBarangEntryView.cs</DependentUpon>

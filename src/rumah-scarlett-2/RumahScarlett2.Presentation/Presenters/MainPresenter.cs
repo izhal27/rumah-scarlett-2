@@ -1,6 +1,7 @@
 ﻿using RumahScarlett2.Presentation.Helper;
 using RumahScarlett2.Presentation.Presenters.Barang;
 using RumahScarlett2.Presentation.Presenters.TipeBarang;
+using RumahScarlett2.Presentation.Presenters.StokBarang;
 using RumahScarlett2.Presentation.Views;
 using System;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace RumahScarlett2.Presentation.Presenters
       // Data
       _view.OnTipeViewClick += _view_OnTipeViewClick;
       _view.OnBarangViewClick += _view_OnBarangViewClick;
+      _view.OnStokBarangViewClick += _view_OnStokBarangViewClick;
     }
 
     private void _view_OnViewLoad(object sender, EventArgs e)
@@ -43,6 +45,12 @@ namespace RumahScarlett2.Presentation.Presenters
     private void _view_OnBarangViewClick(object sender, MainViewEventArgs e)
     {
       var view = (DockContent)new BarangPresenter().GetView;
+      ShowChildForm(view, e);
+    }
+
+    private void _view_OnStokBarangViewClick(object sender, MainViewEventArgs e)
+    {
+      var view = (DockContent)new StokBarangPresenter().GetView;
       ShowChildForm(view, e);
     }
 

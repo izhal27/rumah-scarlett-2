@@ -112,6 +112,17 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories.StokBarang
       }
     }
 
+    public IEnumerable<IStokBarangModel> GetByBarangId(object id)
+    {
+      var dataAccessStatus = new DataAccessStatus();
+
+      using (var context = new DbContext())
+      {
+        var queryStr = "SELECT * FROM stok_barang WHERE barang_id = @id";
+        return GetAll(() => context.Conn.Query<StokBarangModel>(queryStr, new { id }), dataAccessStatus);
+      }
+    }
+
     private bool CheckModelExist(DbContext context, object id)
     {
       return CheckModelExist(context, "SELECT COUNT(1) FROM stok_barang WHERE id=@id",

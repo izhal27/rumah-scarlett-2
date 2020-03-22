@@ -157,6 +157,16 @@ namespace RumahScarlett2.Services.UnitTests.StokBarang
     }
 
     [Fact]
+    public void ShouldReturnListOfModelsByBarangId()
+    {
+      var listModels = _services.GetByBarangId(1).ToList();
+
+      Assert.NotEmpty(listModels);
+
+      TestsHelper.WriteListModels(_testOutputHelper, listModels);
+    }
+
+    [Fact]
     public void ShouldReturnModelMatchingId()
     {
       StokBarangModel model = null;
