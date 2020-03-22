@@ -1,4 +1,5 @@
-﻿using RumahScarlett2.Presentation.Views;
+﻿using RumahScarlett2.Presentation.Presenters;
+using RumahScarlett2.Presentation.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace RumahScarlett2.Presentation
       {
          Application.EnableVisualStyles();
          Application.SetCompatibleTextRenderingDefault(false);
-         Application.Run(new MainView());
+         Application.Run((Form)new MainPresenter().GetView);
       }
    }
 }

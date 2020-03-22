@@ -1,5 +1,5 @@
 ﻿using RumahScarlett2.Presentation.Helper;
-//using RumahScarlett2.Presentation.Presenters.TipeBarang;
+using RumahScarlett2.Presentation.Presenters.TipeBarang;
 using RumahScarlett2.Presentation.Views;
 using System;
 using System.Collections.Generic;
@@ -38,8 +38,8 @@ namespace RumahScarlett2.Presentation.Presenters
 
     private void _view_OnTipeViewClick(object sender, MainViewEventArgs e)
     {
-      //var view = (DockContent)new TipePresenter().GetView;
-      //ShowChildForm(view, e);
+      var view = (DockContent)new TipeBarangPresenter().GetView;
+      ShowChildForm(view, e);
     }
 
     /// <summary>
