@@ -222,12 +222,12 @@
       // 
       // textBoxStokAkhir
       // 
-      this.textBoxStokAkhir.ForeColor = System.Drawing.SystemColors.WindowText;
       this.textBoxStokAkhir.IntegerValue = ((long)(0));
       this.textBoxStokAkhir.Location = new System.Drawing.Point(87, 56);
       this.textBoxStokAkhir.Name = "textBoxStokAkhir";
       this.textBoxStokAkhir.Size = new System.Drawing.Size(100, 20);
       this.textBoxStokAkhir.TabIndex = 2;
+      this.textBoxStokAkhir.Text = "0";
       this.textBoxStokAkhir.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
       // 
       // BarangEntryView
