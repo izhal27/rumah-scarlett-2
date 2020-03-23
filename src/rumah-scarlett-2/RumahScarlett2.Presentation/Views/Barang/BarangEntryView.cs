@@ -46,6 +46,8 @@ namespace RumahScarlett2.Presentation.Views.Barang
       {
         tipe_id = comboBoxTipe.SelectedItem.id,
         nama = textBoxNama.Text,
+        stok_akhir = int.Parse(textBoxStokAkhir.Text),
+        keterangan = textBoxKeterangan.Text
       };
 
       var modelArgs = new ModelEventArgs<BarangModel>(model);
