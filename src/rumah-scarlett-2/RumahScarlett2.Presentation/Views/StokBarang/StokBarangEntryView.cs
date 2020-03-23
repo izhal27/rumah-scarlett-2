@@ -35,12 +35,15 @@ namespace RumahScarlett2.Presentation.Views.StokBarang
 
       if (!_isNewData)
       {
-        textBoxStokAwal.IntegerValue = model.stok_awal;
         _model = model;
+        textBoxStokAwal.IntegerValue = model.stok_awal;
         dateTimePickerTanggal.Value = model.tanggal;
         textBoxBarangMasuk.IntegerValue = model.barang_masuk;
         textBoxBarangKeluar.IntegerValue = model.barang_keluar;
         textBoxStokAkhir.IntegerValue = model.stok_akhir;
+
+        textBoxStokAwal.ReadOnly = false;
+        textBoxStokAkhir.ReadOnly = false;
       }
       else
       {
@@ -78,8 +81,10 @@ namespace RumahScarlett2.Presentation.Views.StokBarang
       {
         barang_id = _barangID,
         tanggal = dateTimePickerTanggal.Value,
+        stok_awal = (int)textBoxStokAwal.IntegerValue,
         barang_masuk = (int)textBoxBarangMasuk.IntegerValue,
         barang_keluar = (int)textBoxBarangKeluar.IntegerValue,
+        stok_akhir = (int)textBoxStokAkhir.IntegerValue
       };
 
       var modelArgs = new ModelEventArgs<StokBarangModel>(model);
