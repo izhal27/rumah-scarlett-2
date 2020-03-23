@@ -1,4 +1,5 @@
 ﻿using RumahScarlett2.CommonComponents;
+using RumahScarlett2.Domain.Models.Barang;
 using RumahScarlett2.Domain.Models.StokBarang;
 using RumahScarlett2.Presentation.Helper;
 using RumahScarlett2.Presentation.Views.CommonControls;
@@ -14,7 +15,18 @@ namespace RumahScarlett2.Presentation.Views.StokBarang
     public event EventHandler OnSaveData;
     private static string _typeName = "Stok Barang";
 
-    public StokBarangEntryView(bool isNewData = true, int barangID = 0, IStokBarangModel model = null)
+    public BaseTextBoxDigit TextBoxStokAwal
+    {
+      get { return textBoxStokAwal; }
+    }
+
+    public BaseTextBoxDigit TextBoxStokAkhir
+    {
+      get { return textBoxStokAkhir; }
+    }
+
+    public StokBarangEntryView(bool isNewData = true, int barangID = 0,
+      IStokBarangModel model = null, IBarangModel barangModel = null)
     {
       InitializeComponent();
       _isNewData = isNewData;
@@ -23,15 +35,41 @@ namespace RumahScarlett2.Presentation.Views.StokBarang
 
       if (!_isNewData)
       {
+        textBoxStokAwal.IntegerValue = model.stok_awal;
         _model = model;
         dateTimePickerTanggal.Value = model.tanggal;
-        textBoxStokAwal.IntegerValue = model.stok_awal;
         textBoxBarangMasuk.IntegerValue = model.barang_masuk;
         textBoxBarangKeluar.IntegerValue = model.barang_keluar;
         textBoxStokAkhir.IntegerValue = model.stok_akhir;
       }
+      else
+      {
+        if (barangModel != null)
+        {
+          textBoxStokAwal.IntegerValue = barangModel.stok_akhir;
+          textBoxBarangMasuk.IntegerValue = 0;
+          textBoxBarangKeluar.IntegerValue = 0;
+          textBoxStokAkhir.IntegerValue = barangModel.stok_akhir;
+        }
+      }
 
       operationButtons.OnSaveButtonClick += OperationButtons_OnSaveButtonClick;
+    }
+
+
+    private void StokBarangEntryView_Load(object sender, EventArgs e)
+    {
+      textBoxBarangMasuk.TextChanged += textBox_TextChanged;
+      textBoxBarangKeluar.TextChanged += textBox_TextChanged;
+    }
+
+    private void textBox_TextChanged(object sender, EventArgs e)
+    {
+      int stokAwal = (int)textBoxStokAwal.IntegerValue;
+      int barangMasuk = (int)textBoxBarangMasuk.IntegerValue;
+      int barangKeluar = (int)textBoxBarangKeluar.IntegerValue;
+      int stokAkhir = (stokAwal + barangMasuk) - barangKeluar;
+      textBoxStokAkhir.IntegerValue = stokAkhir;
     }
 
     private void OperationButtons_OnSaveButtonClick(object sender, EventArgs e)

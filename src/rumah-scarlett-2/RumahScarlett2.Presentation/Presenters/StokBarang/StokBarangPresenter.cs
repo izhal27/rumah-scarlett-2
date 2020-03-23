@@ -24,6 +24,7 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
   {
     private IStokBarangView _view;
     private IStokBarangServices _services;
+    private IBarangServices _barangServices;
     private List<IStokBarangModel> _listObjs;
     private BindingListView<StokBarangModel> _bindingView;
     private static string _typeName = "Stok Barang";
@@ -37,6 +38,7 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
     {
       _view = new StokBarangView();
       _services = new StokBarangServices(new StokBarangRepository(), new ModelDataAnnotationCheck());
+      _barangServices = new BarangServices(new BarangRepository(), new ModelDataAnnotationCheck());
 
       _view.OnLoadData += _view_LoadData;
       _view.OnButtonTambahClick += _view_OnCreateData;
@@ -53,8 +55,14 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
       {
         if (_view.ListDataGrid != null)
         {
+
+          _bindingView = new BindingListView<StokBarangModel>(new List<StokBarangModel> { new StokBarangModel() });
+          _view.ListDataGrid.DataSource = _bindingView;
+          _bindingView.DataSource.Clear();
+          _bindingView.Refresh();
+
           var tipeBarangList = new TipeBarangServices(new TipeBarangRepository(), new ModelDataAnnotationCheck()).GetAll();
-          var barangList = new BarangServices(new BarangRepository(), new ModelDataAnnotationCheck()).GetAll().ToList();
+          var barangList = _barangServices.GetAll().ToList();
 
           foreach (var tipe in tipeBarangList)
           {
@@ -77,7 +85,8 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
       var node = _view.TreeViewTipeBarang.SelectedNode;
       if (node != null && node.Parent != null)
       {
-        var view = new StokBarangEntryView(barangID: int.Parse(node.Name));
+        var barangModel = _barangServices.GetById(node.Name);
+        var view = new StokBarangEntryView(barangID: int.Parse(node.Name), barangModel: barangModel);
         view.OnSaveData += StokBarangEntryView_OnSaveData;
         view.ShowDialog();
       }
@@ -136,6 +145,11 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
             {
               listDataGrid.SelectedItem = null;
             }
+
+            var node = _view.TreeViewTipeBarang.SelectedNode;
+            var stokAkhir = _barangServices.GetById(node.Name).stok_akhir;
+            view.TextBoxStokAwal.IntegerValue = stokAkhir;
+            view.TextBoxStokAkhir.IntegerValue = stokAkhir;
 
             listDataGrid.SelectedItem = newModel;
           }
@@ -214,12 +228,17 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
       var node = _view.TreeViewTipeBarang.SelectedNode;
       if (node != null && node.Parent != null)
       {
+        var barangModel = _barangServices.GetById(node.Name);
+        _view.LabelNamaBarang.Text = barangModel.nama;
+        _view.LabelStokAkhir.Text = barangModel.stok_akhir.ToString("N0");
         _listObjs = _services.GetByBarangId(node.Name).ToList();
         _bindingView = new BindingListView<StokBarangModel>(_listObjs);
         _view.ListDataGrid.DataSource = _bindingView;
       }
       else
       {
+        _view.LabelNamaBarang.Text = "-";
+        _view.LabelStokAkhir.Text = "-";
         _bindingView.DataSource.Clear();
         _bindingView.Refresh();
       }

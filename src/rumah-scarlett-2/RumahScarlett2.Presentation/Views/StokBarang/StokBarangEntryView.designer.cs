@@ -220,6 +220,7 @@
       // 
       this.textBoxStokAwal.Anchor = System.Windows.Forms.AnchorStyles.Left;
       this.textBoxStokAwal.BeforeTouchSize = new System.Drawing.Size(150, 20);
+      this.textBoxStokAwal.ForeColor = System.Drawing.SystemColors.WindowText;
       this.textBoxStokAwal.IntegerValue = ((long)(0));
       this.textBoxStokAwal.Location = new System.Drawing.Point(101, 29);
       this.textBoxStokAwal.Name = "textBoxStokAwal";
@@ -227,37 +228,37 @@
       this.textBoxStokAwal.Size = new System.Drawing.Size(150, 20);
       this.textBoxStokAwal.TabIndex = 1;
       this.textBoxStokAwal.TabStop = false;
-      this.textBoxStokAwal.Text = "0";
       this.textBoxStokAwal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
       // 
       // textBoxBarangMasuk
       // 
       this.textBoxBarangMasuk.Anchor = System.Windows.Forms.AnchorStyles.Left;
       this.textBoxBarangMasuk.BeforeTouchSize = new System.Drawing.Size(150, 20);
+      this.textBoxBarangMasuk.ForeColor = System.Drawing.SystemColors.WindowText;
       this.textBoxBarangMasuk.IntegerValue = ((long)(0));
       this.textBoxBarangMasuk.Location = new System.Drawing.Point(101, 55);
       this.textBoxBarangMasuk.Name = "textBoxBarangMasuk";
       this.textBoxBarangMasuk.Size = new System.Drawing.Size(150, 20);
       this.textBoxBarangMasuk.TabIndex = 2;
-      this.textBoxBarangMasuk.Text = "0";
       this.textBoxBarangMasuk.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
       // 
       // textBoxBarangKeluar
       // 
       this.textBoxBarangKeluar.Anchor = System.Windows.Forms.AnchorStyles.Left;
       this.textBoxBarangKeluar.BeforeTouchSize = new System.Drawing.Size(150, 20);
+      this.textBoxBarangKeluar.ForeColor = System.Drawing.SystemColors.WindowText;
       this.textBoxBarangKeluar.IntegerValue = ((long)(0));
       this.textBoxBarangKeluar.Location = new System.Drawing.Point(101, 81);
       this.textBoxBarangKeluar.Name = "textBoxBarangKeluar";
       this.textBoxBarangKeluar.Size = new System.Drawing.Size(150, 20);
       this.textBoxBarangKeluar.TabIndex = 3;
-      this.textBoxBarangKeluar.Text = "0";
       this.textBoxBarangKeluar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
       // 
       // textBoxStokAkhir
       // 
       this.textBoxStokAkhir.Anchor = System.Windows.Forms.AnchorStyles.Left;
       this.textBoxStokAkhir.BeforeTouchSize = new System.Drawing.Size(150, 20);
+      this.textBoxStokAkhir.ForeColor = System.Drawing.SystemColors.WindowText;
       this.textBoxStokAkhir.IntegerValue = ((long)(0));
       this.textBoxStokAkhir.Location = new System.Drawing.Point(101, 108);
       this.textBoxStokAkhir.Name = "textBoxStokAkhir";
@@ -265,7 +266,6 @@
       this.textBoxStokAkhir.Size = new System.Drawing.Size(150, 20);
       this.textBoxStokAkhir.TabIndex = 4;
       this.textBoxStokAkhir.TabStop = false;
-      this.textBoxStokAkhir.Text = "0";
       this.textBoxStokAkhir.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
       // 
       // StokBarangEntryView
@@ -277,6 +277,7 @@
       this.Name = "StokBarangEntryView";
       this.Tag = "ignore";
       this.Text = "Stok Barang";
+      this.Load += new System.EventHandler(this.StokBarangEntryView_Load);
       this.Controls.SetChildIndex(this.operationButtons, 0);
       this.Controls.SetChildIndex(this.panelUp, 0);
       this.Controls.SetChildIndex(this.groupBoxData, 0);

@@ -26,6 +26,16 @@ namespace RumahScarlett2.Presentation.Views.StokBarang
       get { return treeViewTipeBarang; }
     }
 
+    public Label LabelNamaBarang
+    {
+      get { return labelNamaBarang; }
+    }
+
+    public Label LabelStokAkhir
+    {
+      get { return labelStokAkhir; }
+    }
+
     public StokBarangView()
     {
       InitializeComponent();
@@ -76,6 +86,6 @@ namespace RumahScarlett2.Presentation.Views.StokBarang
     private void ButtonsCRUD_OnTutupClickEvent(object sender, EventArgs e)
     {
       Close();
-    }
+    }    
   }
 }
