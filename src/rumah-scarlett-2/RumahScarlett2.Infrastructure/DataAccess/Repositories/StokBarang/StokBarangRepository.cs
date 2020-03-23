@@ -85,8 +85,19 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories.StokBarang
 
       using (var context = new DbContext())
       {
+        context.BeginTransaction();
+
+        var barangModel = context.Conn.Get<BarangModel>(model.barang_id);
+        if (barangModel != null)
+        {
+          barangModel.stok_akhir = (barangModel.stok_akhir + model.barang_keluar) - model.barang_masuk;
+          context.Conn.Update(barangModel);
+        }
+
         Delete(model, () => context.Conn.Delete((StokBarangModel)model), dataAccessStatus,
               () => CheckModelExist(context, model.id));
+
+        context.Commit();
       }
     }
 
