@@ -92,13 +92,14 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories.StokBarang
 
     public IEnumerable<IStokBarangModel> GetAll()
     {
-      var dataAccessStatus = new DataAccessStatus();
+      //var dataAccessStatus = new DataAccessStatus();
 
-      using (var context = new DbContext())
-      {
-        var queryStr = "SELECT * FROM stok_barang ORDER BY tanggal DESC";
-        return GetAll(() => context.Conn.Query<StokBarangModel>(queryStr), dataAccessStatus);
-      }
+      //using (var context = new DbContext())
+      //{
+      //  var queryStr = "SELECT * FROM stok_barang ORDER BY tanggal DESC";
+      //  return GetAll(() => context.Conn.Query<StokBarangModel>(queryStr), dataAccessStatus);
+      //}
+      throw new NotImplementedException();
     }
 
     public IStokBarangModel GetById(object id)
@@ -118,7 +119,7 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories.StokBarang
 
       using (var context = new DbContext())
       {
-        var queryStr = "SELECT * FROM stok_barang WHERE barang_id = @id";
+        var queryStr = "SELECT * FROM stok_barang WHERE barang_id = @id ORDER BY tanggal DESC";
         return GetAll(() => context.Conn.Query<StokBarangModel>(queryStr, new { id }), dataAccessStatus);
       }
     }
