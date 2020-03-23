@@ -261,7 +261,15 @@
       <Name>RumahScarlett2.Services</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\exit_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skincare_32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

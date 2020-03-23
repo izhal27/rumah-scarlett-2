@@ -29,7 +29,6 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
       this.menuStrip = new System.Windows.Forms.MenuStrip();
       this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
       this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +75,7 @@
       // exitToolStripMenuItem
       // 
       this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
       this.exitToolStripMenuItem.Text = "E&xit";
       this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
       // 
@@ -122,11 +121,12 @@
       // aboutToolStripMenuItem
       // 
       this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
       this.aboutToolStripMenuItem.Text = "&About ... ...";
       // 
       // toolStrip
       // 
+      this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
       this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stokBarangToolStripButton,
             this.barangToolStripButton,
@@ -134,43 +134,50 @@
             this.exitToolStripButton});
       this.toolStrip.Location = new System.Drawing.Point(0, 24);
       this.toolStrip.Name = "toolStrip";
-      this.toolStrip.Size = new System.Drawing.Size(632, 25);
+      this.toolStrip.Size = new System.Drawing.Size(632, 64);
       this.toolStrip.TabIndex = 1;
       this.toolStrip.Text = "ToolStrip";
       // 
       // stokBarangToolStripButton
       // 
-      this.stokBarangToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.stokBarangToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("stokBarangToolStripButton.Image")));
-      this.stokBarangToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
+      this.stokBarangToolStripButton.Image = global::RumahScarlett2.Presentation.Properties.Resources.stock_32;
+      this.stokBarangToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+      this.stokBarangToolStripButton.ImageTransparentColor = System.Drawing.Color.BlanchedAlmond;
       this.stokBarangToolStripButton.Name = "stokBarangToolStripButton";
-      this.stokBarangToolStripButton.Size = new System.Drawing.Size(23, 22);
+      this.stokBarangToolStripButton.Padding = new System.Windows.Forms.Padding(5);
+      this.stokBarangToolStripButton.Size = new System.Drawing.Size(84, 61);
       this.stokBarangToolStripButton.Text = "Stok Barang";
+      this.stokBarangToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
       this.stokBarangToolStripButton.Click += new System.EventHandler(this.stokBarangToolStripButton_Click);
       // 
       // barangToolStripButton
       // 
-      this.barangToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.barangToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("barangToolStripButton.Image")));
+      this.barangToolStripButton.Image = global::RumahScarlett2.Presentation.Properties.Resources.skincare_32;
+      this.barangToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
       this.barangToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
       this.barangToolStripButton.Name = "barangToolStripButton";
-      this.barangToolStripButton.Size = new System.Drawing.Size(23, 22);
+      this.barangToolStripButton.Padding = new System.Windows.Forms.Padding(5);
+      this.barangToolStripButton.Size = new System.Drawing.Size(58, 61);
       this.barangToolStripButton.Text = "Barang";
+      this.barangToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
       this.barangToolStripButton.Click += new System.EventHandler(this.barangToolStripButton_Click);
       // 
       // toolStripSeparator1
       // 
       this.toolStripSeparator1.Name = "toolStripSeparator1";
-      this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+      this.toolStripSeparator1.Size = new System.Drawing.Size(6, 64);
       // 
       // exitToolStripButton
       // 
       this.exitToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.exitToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripButton.Image")));
+      this.exitToolStripButton.Image = global::RumahScarlett2.Presentation.Properties.Resources.exit_32;
+      this.exitToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
       this.exitToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
       this.exitToolStripButton.Name = "exitToolStripButton";
-      this.exitToolStripButton.Size = new System.Drawing.Size(23, 22);
+      this.exitToolStripButton.Padding = new System.Windows.Forms.Padding(5);
+      this.exitToolStripButton.Size = new System.Drawing.Size(46, 61);
       this.exitToolStripButton.Text = "Exit";
+      this.exitToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
       this.exitToolStripButton.Click += new System.EventHandler(this.exitToolStripButton_Click);
       // 
       // statusStrip
