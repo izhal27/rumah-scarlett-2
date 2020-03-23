@@ -87,9 +87,14 @@ namespace RumahScarlett2.Presentation.Views
       OnBarangViewClick?.Invoke(sender, _eventArgs);
     }
 
+    private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
+    {
+      OnTentangViewClick?.Invoke(sender, e);
+    }
+
     private void exitToolStripButton_Click(object sender, EventArgs e)
     {
       Application.Exit();
     }
-  }
+}
 }

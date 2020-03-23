@@ -18,7 +18,7 @@ namespace RumahScarlett2.Presentation.Views.CommonControls
     {
       ShowRowHeader = true;
       AllowEditing = false;
-      //AllowSorting = false;
+      AllowSorting = false;
       AutoSizeColumnsMode = AutoSizeColumnsMode.Fill;
       Anchor = AnchorStyles.Top | AnchorStyles.Right |
                AnchorStyles.Bottom | AnchorStyles.Left;

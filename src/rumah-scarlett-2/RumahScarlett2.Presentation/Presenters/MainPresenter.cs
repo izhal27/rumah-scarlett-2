@@ -7,6 +7,7 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
+using RumahScarlett2.Presentation.Presenters.Tentang;
 
 namespace RumahScarlett2.Presentation.Presenters
 {
@@ -29,6 +30,7 @@ namespace RumahScarlett2.Presentation.Presenters
       _view.OnTipeViewClick += _view_OnTipeViewClick;
       _view.OnBarangViewClick += _view_OnBarangViewClick;
       _view.OnStokBarangViewClick += _view_OnStokBarangViewClick;
+      _view.OnTentangViewClick += _view_OnTentangViewClick;
     }
 
     private void _view_OnViewLoad(object sender, EventArgs e)
@@ -52,6 +54,11 @@ namespace RumahScarlett2.Presentation.Presenters
     {
       var view = (DockContent)new StokBarangPresenter().GetView;
       ShowChildForm(view, e);
+    }
+
+    private void _view_OnTentangViewClick(object sender, EventArgs e)
+    {
+      new TentangPresenter().GetView.ShowView();
     }
 
     /// <summary>

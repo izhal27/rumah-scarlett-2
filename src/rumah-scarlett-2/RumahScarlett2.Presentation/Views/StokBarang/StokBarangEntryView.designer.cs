@@ -28,6 +28,7 @@
       /// </summary>
       private void InitializeComponent()
       {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokBarangEntryView));
       this.groupBoxData = new System.Windows.Forms.GroupBox();
       this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
       this.label3 = new System.Windows.Forms.Label();
@@ -274,6 +275,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(293, 268);
       this.Controls.Add(this.groupBoxData);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "StokBarangEntryView";
       this.Tag = "ignore";
       this.Text = "Stok Barang";

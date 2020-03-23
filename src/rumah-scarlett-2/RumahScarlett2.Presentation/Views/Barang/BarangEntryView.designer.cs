@@ -28,6 +28,7 @@
       /// </summary>
       private void InitializeComponent()
       {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BarangEntryView));
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
       this.label1 = new System.Windows.Forms.Label();
@@ -221,12 +222,12 @@
       // 
       // textBoxStokAkhir
       // 
+      this.textBoxStokAkhir.ForeColor = System.Drawing.SystemColors.WindowText;
       this.textBoxStokAkhir.IntegerValue = ((long)(0));
       this.textBoxStokAkhir.Location = new System.Drawing.Point(87, 56);
       this.textBoxStokAkhir.Name = "textBoxStokAkhir";
       this.textBoxStokAkhir.Size = new System.Drawing.Size(100, 20);
       this.textBoxStokAkhir.TabIndex = 2;
-      this.textBoxStokAkhir.Text = "0";
       this.textBoxStokAkhir.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
       // 
       // BarangEntryView
@@ -235,6 +236,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(405, 325);
       this.Controls.Add(this.groupBox1);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "BarangEntryView";
       this.Tag = "ignore";
       this.Text = "Barang";
