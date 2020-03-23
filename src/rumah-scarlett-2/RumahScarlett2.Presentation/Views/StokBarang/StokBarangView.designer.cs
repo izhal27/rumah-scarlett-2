@@ -50,10 +50,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.listDataGrid.AutoSizeColumnsMode = Syncfusion.WinForms.DataGrid.Enums.AutoSizeColumnsMode.Fill;
-      this.listDataGrid.Location = new System.Drawing.Point(238, 126);
+      this.listDataGrid.Location = new System.Drawing.Point(268, 126);
       this.listDataGrid.Name = "listDataGrid";
       this.listDataGrid.ShowRowHeader = true;
-      this.listDataGrid.Size = new System.Drawing.Size(534, 283);
+      this.listDataGrid.Size = new System.Drawing.Size(504, 283);
       this.listDataGrid.TabIndex = 1;
       this.listDataGrid.Text = "listDataGrid1";
       // 
@@ -62,9 +62,9 @@
       this.crudcButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.crudcButtons.BackColor = System.Drawing.Color.Transparent;
-      this.crudcButtons.Location = new System.Drawing.Point(238, 415);
+      this.crudcButtons.Location = new System.Drawing.Point(268, 415);
       this.crudcButtons.Name = "crudcButtons";
-      this.crudcButtons.Size = new System.Drawing.Size(534, 35);
+      this.crudcButtons.Size = new System.Drawing.Size(504, 35);
       this.crudcButtons.TabIndex = 2;
       // 
       // treeViewTipeBarang
@@ -73,7 +73,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
       this.treeViewTipeBarang.Location = new System.Drawing.Point(12, 58);
       this.treeViewTipeBarang.Name = "treeViewTipeBarang";
-      this.treeViewTipeBarang.Size = new System.Drawing.Size(220, 392);
+      this.treeViewTipeBarang.Size = new System.Drawing.Size(250, 392);
       this.treeViewTipeBarang.TabIndex = 0;
       this.treeViewTipeBarang.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewTipeBarang_AfterSelect);
       // 
@@ -91,12 +91,12 @@
       this.tableLayoutPanel1.Controls.Add(this.label4, 1, 1);
       this.tableLayoutPanel1.Controls.Add(this.labelStokAkhir, 2, 1);
       this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
-      this.tableLayoutPanel1.Location = new System.Drawing.Point(238, 58);
+      this.tableLayoutPanel1.Location = new System.Drawing.Point(268, 58);
       this.tableLayoutPanel1.Name = "tableLayoutPanel1";
       this.tableLayoutPanel1.RowCount = 2;
       this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
       this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-      this.tableLayoutPanel1.Size = new System.Drawing.Size(534, 62);
+      this.tableLayoutPanel1.Size = new System.Drawing.Size(504, 62);
       this.tableLayoutPanel1.TabIndex = 3;
       // 
       // label1
