@@ -119,7 +119,7 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories.StokBarang
 
       using (var context = new DbContext())
       {
-        var queryStr = "SELECT * FROM stok_barang WHERE barang_id = @id ORDER BY tanggal DESC";
+        var queryStr = "SELECT * FROM stok_barang WHERE barang_id = @id ORDER BY id DESC";
         return GetAll(() => context.Conn.Query<StokBarangModel>(queryStr, new { id }), dataAccessStatus);
       }
     }
