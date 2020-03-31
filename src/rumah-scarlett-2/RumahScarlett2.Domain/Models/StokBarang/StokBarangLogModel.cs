@@ -16,14 +16,17 @@ namespace RumahScarlett2.Domain.Models.StokBarang
     public int id { get; set; }
 
     [Browsable(false)]
+    [DisplayFormat(DataFormatString = "dd/MM/yyyy")]
+    [Display(Name = "Tanggal")]
+    public DateTime tanggal { get; set; }
+
+    [Browsable(false)]
     [Range(1, uint.MaxValue, ErrorMessage = "Barang harus diisi !!!")]
     [Display(Name = "Barang ID")]
     public int barang_id { get; set; }
 
-    [Browsable(false)]
-    [DisplayFormat(DataFormatString = "dd/MM/yyyy")]
-    [Display(Name = "Tanggal")]
-    public DateTime tanggal { get; set; }
+    [Display(Name = "Nama Barang")]
+    public string barang_nama { get; set; }
 
     [Browsable(false)]
     [DisplayFormat(DataFormatString = "{0:N0}")]
