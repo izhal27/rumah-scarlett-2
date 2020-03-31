@@ -48,6 +48,7 @@
     <Compile Include="Models\Barang\BarangModel.cs" />
     <Compile Include="Models\Barang\IBarangModel.cs" />
     <Compile Include="Models\StokBarang\IStokBarangModel.cs" />
+    <Compile Include="Models\StokBarang\StokBarangLogModel.cs" />
     <Compile Include="Models\StokBarang\StokBarangModel.cs" />
     <Compile Include="Models\TipeBarang\ITipeBarangModel.cs" />
     <Compile Include="Models\TipeBarang\TipeBarangModel.cs" />
