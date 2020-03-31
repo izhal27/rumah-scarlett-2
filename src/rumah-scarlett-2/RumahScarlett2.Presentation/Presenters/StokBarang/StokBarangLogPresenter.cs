@@ -24,10 +24,9 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
   {
     private IStokBarangLogView _view;
     private IStokBarangServices _services;
-    private IBarangServices _barangServices;
-    private List<IStokBarangModel> _listObjs;
+    //private List<IStokBarangModel> _listObjs;
     private BindingListView<StokBarangLogModel> _bindingView;
-    private static string _typeName = "Stok Barang Log";
+    //private static string _typeName = "Stok Barang Log";
 
     public IStokBarangLogView GetView
     {
@@ -40,6 +39,7 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
       _services = new StokBarangServices(new StokBarangRepository(), new ModelDataAnnotationCheck());
 
       _view.OnLoadData += _view_LoadData;
+      _view.OnButtonTampilkanClick += _view_OnButtonTampilkanClick;
     }
 
     private void _view_LoadData(object sender, EventArgs e)
@@ -48,11 +48,20 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
       {
         if (_view.ListDataGrid != null)
         {
-          _listObjs = _services.GetStokBarangLogByDate(_view.DateTimePickerTanggal.Value).ToList();
-          _bindingView = new BindingListView<StokBarangLogModel>(_listObjs);
+          var listObjs = _services.GetStokBarangLogByDate(_view.DateTimePickerTanggal.Value).ToList();
+          _bindingView = new BindingListView<StokBarangLogModel>(listObjs);
           _view.ListDataGrid.DataSource = _bindingView;
         }
       }
-    }    
+    }
+
+    private void _view_OnButtonTampilkanClick(object sender, EventArgs e)
+    {
+      using (new WaitCursorHandler())
+      {
+        var listObjs = _services.GetStokBarangLogByDate(_view.DateTimePickerTanggal.Value).ToList();
+        _bindingView.DataSource = listObjs;
+      }
+    }
   }
 }
