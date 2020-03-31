@@ -141,7 +141,7 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories.StokBarang
 
       using (var context = new DbContext())
       {
-        var queryStr = "SELECT sb.barang_id, b.nama, SUM(sb.barang_masuk) as barang_masuk, " +
+        var queryStr = "SELECT sb.barang_id, b.nama as barang_nama, SUM(sb.barang_masuk) as barang_masuk, " +
                        "SUM(sb.barang_keluar) as barang_keluar " +
                        "FROM stok_barang as sb LEFT JOIN barang as b on sb.barang_id = b.id " +
                        "WHERE date(sb.tanggal) = @date " +
