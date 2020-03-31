@@ -134,6 +134,22 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories.StokBarang
         return GetAll(() => context.Conn.Query<StokBarangModel>(queryStr, new { id }), dataAccessStatus);
       }
     }
+    
+    public IEnumerable<IStokBarangModel> GetStokBarangLogByDate(object date)
+    {
+      var dataAccessStatus = new DataAccessStatus();
+
+      using (var context = new DbContext())
+      {
+        var queryStr = "SELECT sb.barang_id, b.nama, SUM(sb.barang_masuk) as barang_masuk, " +
+                       "SUM(sb.barang_keluar) as barang_keluar " +
+                       "FROM stok_barang as sb LEFT JOIN barang as b on sb.barang_id = b.id " +
+                       "WHERE date(sb.tanggal) = @date " +
+                       "GROUP BY sb.barang_id " +
+                       "ORDER BY sb.barang_id";
+        return GetAll(() => context.Conn.Query<StokBarangLogModel>(queryStr, new { date = ((DateTime)date).ToString("yyyy-MM-dd") }), dataAccessStatus);
+      }
+    }
 
     private bool CheckModelExist(DbContext context, object id)
     {
