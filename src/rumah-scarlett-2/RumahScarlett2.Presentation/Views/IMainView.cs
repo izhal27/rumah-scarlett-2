@@ -14,6 +14,7 @@ namespace RumahScarlett2.Presentation.Views
     event EventHandler<MainViewEventArgs> OnTipeViewClick;
     event EventHandler<MainViewEventArgs> OnBarangViewClick;
     event EventHandler<MainViewEventArgs> OnStokBarangViewClick;
+    event EventHandler<MainViewEventArgs> OnStokBarangLogViewClick;
     event EventHandler OnTentangViewClick;
   }
 

@@ -47,6 +47,7 @@
       this.statusStrip = new System.Windows.Forms.StatusStrip();
       this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
       this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+      this.stokBarangLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.menuStrip.SuspendLayout();
       this.toolStrip.SuspendLayout();
       this.statusStrip.SuspendLayout();
@@ -85,7 +86,8 @@
       this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tipeBarangToolStripMenuItem,
             this.barangToolStripMenuItem,
-            this.stokBarangToolStripMenuItem});
+            this.stokBarangToolStripMenuItem,
+            this.stokBarangLogToolStripMenuItem});
       this.toolsMenu.Name = "toolsMenu";
       this.toolsMenu.Size = new System.Drawing.Size(43, 20);
       this.toolsMenu.Text = "&Data";
@@ -93,21 +95,21 @@
       // tipeBarangToolStripMenuItem
       // 
       this.tipeBarangToolStripMenuItem.Name = "tipeBarangToolStripMenuItem";
-      this.tipeBarangToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+      this.tipeBarangToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
       this.tipeBarangToolStripMenuItem.Text = "&Tipe Barang";
       this.tipeBarangToolStripMenuItem.Click += new System.EventHandler(this.tipeBarangToolStripMenuItem_Click);
       // 
       // barangToolStripMenuItem
       // 
       this.barangToolStripMenuItem.Name = "barangToolStripMenuItem";
-      this.barangToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+      this.barangToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
       this.barangToolStripMenuItem.Text = "&Barang";
       this.barangToolStripMenuItem.Click += new System.EventHandler(this.barangToolStripMenuItem_Click);
       // 
       // stokBarangToolStripMenuItem
       // 
       this.stokBarangToolStripMenuItem.Name = "stokBarangToolStripMenuItem";
-      this.stokBarangToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+      this.stokBarangToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
       this.stokBarangToolStripMenuItem.Text = "&Stok Barang";
       this.stokBarangToolStripMenuItem.Click += new System.EventHandler(this.stokBarangToolStripMenuItem_Click);
       // 
@@ -122,7 +124,7 @@
       // aboutToolStripMenuItem
       // 
       this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
       this.aboutToolStripMenuItem.Text = "&About ... ...";
       this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
       // 
@@ -198,6 +200,13 @@
       this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
       this.toolStripStatusLabel.Text = "Status";
       // 
+      // stokBarangLogToolStripMenuItem
+      // 
+      this.stokBarangLogToolStripMenuItem.Name = "stokBarangLogToolStripMenuItem";
+      this.stokBarangLogToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+      this.stokBarangLogToolStripMenuItem.Text = "Stok Barang &Log";
+      this.stokBarangLogToolStripMenuItem.Click += new System.EventHandler(this.stokBarangLogToolStripMenuItem_Click);
+      // 
       // MainView
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +253,7 @@
     private System.Windows.Forms.ToolStripMenuItem tipeBarangToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem barangToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem stokBarangToolStripMenuItem;
+    private System.Windows.Forms.ToolStripMenuItem stokBarangLogToolStripMenuItem;
   }
 }
 

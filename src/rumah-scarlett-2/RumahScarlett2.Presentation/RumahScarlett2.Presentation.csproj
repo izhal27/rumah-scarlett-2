@@ -80,7 +80,9 @@
     <Compile Include="Presenters\IBasePresenter.cs" />
     <Compile Include="Presenters\IMainPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
+    <Compile Include="Presenters\StokBarang\IStokBarangLogPresenter.cs" />
     <Compile Include="Presenters\StokBarang\IStokBarangPresenter.cs" />
+    <Compile Include="Presenters\StokBarang\StokBarangLogPresenter.cs" />
     <Compile Include="Presenters\StokBarang\StokBarangPresenter.cs" />
     <Compile Include="Presenters\Tentang\ITentangPresenter.cs" />
     <Compile Include="Presenters\Tentang\TentangPresenter.cs" />

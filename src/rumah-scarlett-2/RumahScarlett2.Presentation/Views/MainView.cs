@@ -20,6 +20,7 @@ namespace RumahScarlett2.Presentation.Views
     public event EventHandler<MainViewEventArgs> OnTipeViewClick;
     public event EventHandler<MainViewEventArgs> OnBarangViewClick;
     public event EventHandler<MainViewEventArgs> OnStokBarangViewClick;
+    public event EventHandler<MainViewEventArgs> OnStokBarangLogViewClick;
     public event EventHandler OnTentangViewClick;
 
     public MainView()
@@ -67,6 +68,12 @@ namespace RumahScarlett2.Presentation.Views
       OnStokBarangViewClick?.Invoke(sender, _eventArgs);
     }
 
+
+    private void stokBarangLogToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      OnStokBarangLogViewClick?.Invoke(sender, _eventArgs);
+    }
+
     private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
     {
       OnTentangViewClick?.Invoke(sender, _eventArgs);
@@ -96,5 +103,5 @@ namespace RumahScarlett2.Presentation.Views
     {
       Application.Exit();
     }
-}
+  }
 }

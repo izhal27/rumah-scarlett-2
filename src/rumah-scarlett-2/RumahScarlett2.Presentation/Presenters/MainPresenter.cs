@@ -30,6 +30,7 @@ namespace RumahScarlett2.Presentation.Presenters
       _view.OnTipeViewClick += _view_OnTipeViewClick;
       _view.OnBarangViewClick += _view_OnBarangViewClick;
       _view.OnStokBarangViewClick += _view_OnStokBarangViewClick;
+      _view.OnStokBarangLogViewClick += _view_OnStokBarangLogViewClick;
       _view.OnTentangViewClick += _view_OnTentangViewClick;
     }
 
@@ -53,6 +54,12 @@ namespace RumahScarlett2.Presentation.Presenters
     private void _view_OnStokBarangViewClick(object sender, MainViewEventArgs e)
     {
       var view = (DockContent)new StokBarangPresenter().GetView;
+      ShowChildForm(view, e);
+    }
+
+    private void _view_OnStokBarangLogViewClick(object sender, MainViewEventArgs e)
+    {
+      var view = (DockContent)new StokBarangLogPresenter().GetView;
       ShowChildForm(view, e);
     }
 
