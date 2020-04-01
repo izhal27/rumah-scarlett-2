@@ -14,6 +14,7 @@ using RumahScarlett2.Services.Services.TipeBarang;
 using Syncfusion.WinForms.DataGrid.Events;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -51,8 +52,24 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
           var listObjs = _services.GetStokBarangLogByDate(_view.DateTimePickerTanggal.Value).ToList();
           _bindingView = new BindingListView<StokBarangLogModel>(listObjs);
           _view.ListDataGrid.DataSource = _bindingView;
+          _bindingView.ListChanged += _bindingView_ListChanged;
         }
       }
+    }
+
+    private void _bindingView_ListChanged(object sender, ListChangedEventArgs e)
+    {
+      int totalMasuk = 0;
+      int totalKeluar = 0;
+
+      if (_bindingView.Count > 0)
+      {
+        totalMasuk = _bindingView.ToList().Sum(sb => sb.barang_masuk);
+        totalKeluar = _bindingView.ToList().Sum(sb => sb.barang_keluar);
+      }
+
+      _view.LabelTotalMasuk.Text = totalMasuk.ToString("N0");
+      _view.LabelTotalKeluar.Text = totalKeluar.ToString("N0");
     }
 
     private void _view_OnButtonTampilkanClick(object sender, EventArgs e)

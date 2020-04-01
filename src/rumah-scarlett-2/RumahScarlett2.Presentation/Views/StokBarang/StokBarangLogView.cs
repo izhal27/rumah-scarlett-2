@@ -25,7 +25,17 @@ namespace RumahScarlett2.Presentation.Views.StokBarang
     {
       get { return dateTimePickerTanggal; }
     }
-    
+
+    public Label LabelTotalMasuk
+    {
+      get { return labelTotalMasuk; }
+    }
+
+    public Label LabelTotalKeluar
+    {
+      get { return labelTotalKeluar; }
+    }
+
     public StokBarangLogView()
     {
       InitializeComponent();
@@ -38,7 +48,7 @@ namespace RumahScarlett2.Presentation.Views.StokBarang
       OnLoadData?.Invoke(sender, e);
       ActiveControl = buttonTutup;
     }
-    
+
     private void buttonTampilkan_Click(object sender, EventArgs e)
     {
       OnButtonTampilkanClick?.Invoke(sender, e);
