@@ -47,12 +47,14 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
     {
       using (new WaitCursorHandler())
       {
-        if (_view.ListDataGrid != null)
-        {
+        if (_view.ListDataGrid != null)        {
+
           var listObjs = _services.GetStokBarangLogByDate(_view.DateTimePickerTanggal.Value).ToList();
           _bindingView = new BindingListView<StokBarangLogModel>(listObjs);
-          _view.ListDataGrid.DataSource = _bindingView;
           _bindingView.ListChanged += _bindingView_ListChanged;
+          _bindingView.Refresh();
+
+          _view.ListDataGrid.DataSource = _bindingView;
         }
       }
     }
