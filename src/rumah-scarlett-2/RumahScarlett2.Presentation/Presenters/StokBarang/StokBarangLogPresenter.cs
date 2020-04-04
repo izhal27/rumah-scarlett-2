@@ -52,7 +52,7 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
           var listObjs = _services.GetStokBarangLogByDate(_view.DateTimePickerTanggal.Value).ToList();
           _bindingView = new BindingListView<StokBarangLogModel>(listObjs);
           _bindingView.ListChanged += _bindingView_ListChanged;
-          _bindingView.Refresh();
+          SetLabelTotal(listObjs);
 
           _view.ListDataGrid.DataSource = _bindingView;
         }
@@ -61,13 +61,18 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
 
     private void _bindingView_ListChanged(object sender, ListChangedEventArgs e)
     {
+      SetLabelTotal(_bindingView.ToList());
+    }
+
+    private void SetLabelTotal(IEnumerable<IStokBarangModel> listObjs)
+    {
       int totalMasuk = 0;
       int totalKeluar = 0;
 
-      if (_bindingView.Count > 0)
+      if (listObjs.ToList().Count > 0)
       {
-        totalMasuk = _bindingView.ToList().Sum(sb => sb.barang_masuk);
-        totalKeluar = _bindingView.ToList().Sum(sb => sb.barang_keluar);
+        totalMasuk = listObjs.Sum(sb => sb.barang_masuk);
+        totalKeluar = listObjs.Sum(sb => sb.barang_keluar);
       }
 
       _view.LabelTotalMasuk.Text = totalMasuk.ToString("N0");
