@@ -151,7 +151,7 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
             view.TextBoxStokAwal.IntegerValue = stokAkhir;
             view.TextBoxStokAkhir.IntegerValue = stokAkhir;
 
-            listDataGrid.SelectedItem = newModel;
+            //listDataGrid.SelectedItem = newModel;
           }
           else
           {
