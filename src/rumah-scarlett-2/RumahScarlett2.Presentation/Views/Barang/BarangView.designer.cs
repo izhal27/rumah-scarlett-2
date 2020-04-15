@@ -34,6 +34,7 @@
       this.buttonUbah = new System.Windows.Forms.Button();
       this.buttonHapus = new System.Windows.Forms.Button();
       this.buttonTutup = new System.Windows.Forms.Button();
+      this.buttonRefresh = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.listDataGrid)).BeginInit();
       this.tlpButtons.SuspendLayout();
       this.SuspendLayout();
@@ -46,6 +47,7 @@
       // 
       this.listDataGrid.AccessibleName = "Table";
       this.listDataGrid.AllowEditing = false;
+      this.listDataGrid.AllowSorting = false;
       this.listDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -63,18 +65,17 @@
       this.tlpButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
       this.tlpButtons.BackColor = System.Drawing.SystemColors.Control;
-      this.tlpButtons.ColumnCount = 4;
+      this.tlpButtons.ColumnCount = 5;
       this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
       this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
       this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
       this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-      this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-      this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-      this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+      this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
       this.tlpButtons.Controls.Add(this.buttonTambah, 0, 0);
       this.tlpButtons.Controls.Add(this.buttonUbah, 1, 0);
       this.tlpButtons.Controls.Add(this.buttonHapus, 2, 0);
-      this.tlpButtons.Controls.Add(this.buttonTutup, 3, 0);
+      this.tlpButtons.Controls.Add(this.buttonTutup, 4, 0);
+      this.tlpButtons.Controls.Add(this.buttonRefresh, 3, 0);
       this.tlpButtons.Location = new System.Drawing.Point(12, 415);
       this.tlpButtons.Name = "tlpButtons";
       this.tlpButtons.RowCount = 1;
@@ -130,6 +131,18 @@
       this.buttonTutup.UseVisualStyleBackColor = true;
       this.buttonTutup.Click += new System.EventHandler(this.crudcButtons_OnTutupClickEvent);
       // 
+      // buttonRefresh
+      // 
+      this.buttonRefresh.Anchor = System.Windows.Forms.AnchorStyles.Left;
+      this.buttonRefresh.Location = new System.Drawing.Point(246, 6);
+      this.buttonRefresh.Name = "buttonRefresh";
+      this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
+      this.buttonRefresh.TabIndex = 97;
+      this.buttonRefresh.Tag = "Hapus";
+      this.buttonRefresh.Text = "&Refresh";
+      this.buttonRefresh.UseVisualStyleBackColor = true;
+      this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+      // 
       // BarangView
       // 
       this.AccessibleName = "Master";
@@ -158,5 +171,6 @@
       protected System.Windows.Forms.Button buttonUbah;
       protected System.Windows.Forms.Button buttonHapus;
       protected System.Windows.Forms.Button buttonTutup;
+        protected System.Windows.Forms.Button buttonRefresh;
     }
 }

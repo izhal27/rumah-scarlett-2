@@ -36,6 +36,7 @@ namespace RumahScarlett2.Presentation.Presenters.Barang
       _view.OnButtonTambahClick += _view_OnCreateData;
       _view.OnButtonUbahClick += _view_OnUpdateData;
       _view.OnButtonHapusClick += _view_OnDeleteData;
+      _view.OnButtonRefreshClick += _view_OnButtonRefreshClick;
 
       _view.OnDataGridCellDoubleClick += _view_DataGrid_CellDoubleClick;
     }
@@ -172,6 +173,15 @@ namespace RumahScarlett2.Presentation.Presenters.Barang
             }
           }
         }
+      }
+    }
+
+    private void _view_OnButtonRefreshClick(object sender, EventArgs e)
+    {
+      using (new WaitCursorHandler())
+      {
+        _listObjs = _barangServices.GetAll().ToList();
+        _bindingView.DataSource = _listObjs;
       }
     }
 
