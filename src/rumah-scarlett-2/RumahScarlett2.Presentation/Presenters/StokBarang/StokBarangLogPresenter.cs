@@ -47,7 +47,8 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
     {
       using (new WaitCursorHandler())
       {
-        if (_view.ListDataGrid != null)        {
+        if (_view.ListDataGrid != null)
+        {
 
           var listObjs = _services.GetStokBarangLogByDate(_view.DateTimePickerTanggal.Value).ToList();
           _bindingView = new BindingListView<StokBarangLogModel>(listObjs);
@@ -83,8 +84,17 @@ namespace RumahScarlett2.Presentation.Presenters.StokBarang
     {
       using (new WaitCursorHandler())
       {
-        var listObjs = _services.GetStokBarangLogByDate(_view.DateTimePickerTanggal.Value).ToList();
-        _bindingView.DataSource = listObjs;
+        if (_view.TanggalChecked)
+        {
+          var listObjs = _services.GetStokBarangLogByDate(_view.DateTimePickerTanggal.Value).ToList();
+          _bindingView.DataSource = listObjs;
+        }
+        else
+        {
+          var listObjs = _services.GetStokBarangLogByDate(_view.DateTimePickerStart.Value, 
+                         _view.DateTimePickerEnd.Value).ToList();
+          _bindingView.DataSource = listObjs;
+        }
       }
     }
   }
