@@ -199,5 +199,15 @@ namespace RumahScarlett2.Services.UnitTests.StokBarang
 
       TestsHelper.WriteListModels(_testOutputHelper, listModels);
     }
+
+    [Fact]
+    public void ShouldReturnListOfStokBarangLogModelsBetweenDate()
+    {
+      var listModels = _services.GetStokBarangLogByDate(DateTime.Now.AddDays(-10), DateTime.Now).ToList();
+
+      Assert.NotEmpty(listModels);
+
+      TestsHelper.WriteListModels(_testOutputHelper, listModels);
+    }
   }
 }

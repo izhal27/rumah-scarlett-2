@@ -134,20 +134,35 @@ namespace RumahScarlett2.Infrastructure.DataAccess.Repositories.StokBarang
         return GetAll(() => context.Conn.Query<StokBarangModel>(queryStr, new { id }), dataAccessStatus);
       }
     }
-    
-    public IEnumerable<IStokBarangModel> GetStokBarangLogByDate(object date)
+
+    public IEnumerable<IStokBarangModel> GetStokBarangLogByDate(object date, object endDate = null)
     {
       var dataAccessStatus = new DataAccessStatus();
 
       using (var context = new DbContext())
       {
-        var queryStr = "SELECT sb.barang_id, b.nama as barang_nama, SUM(sb.barang_masuk) as barang_masuk, " +
-                       "SUM(sb.barang_keluar) as barang_keluar " +
+        string queryStr = "SELECT sb.barang_id [id], sb.tanggal, b.nama [barang_nama], SUM(sb.barang_masuk) [barang_masuk], " +
+                       "SUM(sb.barang_keluar) [barang_keluar] " +
                        "FROM stok_barang as sb LEFT JOIN barang as b on sb.barang_id = b.id " +
-                       "WHERE date(sb.tanggal) = @date " +
+                       "WHERE {WHERE} " +
                        "GROUP BY sb.barang_id " +
                        "ORDER BY sb.barang_id";
-        return GetAll(() => context.Conn.Query<StokBarangLogModel>(queryStr, new { date = ((DateTime)date).ToString("yyyy-MM-dd") }), dataAccessStatus);
+        object param = null;
+        var dateStr = ((DateTime)date).ToString("yyyy-MM-dd");
+
+        if (endDate == null)
+        {
+          queryStr = queryStr.Replace("{WHERE}", "date(sb.tanggal) = @date");
+          param = new { date = dateStr };
+        }
+        else
+        {
+          var endDateStr = ((DateTime)endDate).ToString("yyyy-MM-dd");
+          queryStr = queryStr.Replace("{WHERE}", "date(sb.tanggal) BETWEEN @date and @enddate");
+          param = new { date = dateStr, enddate = endDateStr };
+        }
+
+        return GetAll(() => context.Conn.Query<StokBarangLogModel>(queryStr, param), dataAccessStatus);
       }
     }
 

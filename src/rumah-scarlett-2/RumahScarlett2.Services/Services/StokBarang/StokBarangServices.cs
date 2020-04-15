@@ -50,9 +50,9 @@ namespace RumahScarlett2.Services.Services.StokBarang
       return _repo.GetByBarangId(id);
     }
     
-    public IEnumerable<IStokBarangModel> GetStokBarangLogByDate(object date)
+    public IEnumerable<IStokBarangModel> GetStokBarangLogByDate(object date, object endDate = null)
     {
-      return _repo.GetStokBarangLogByDate(date);
+      return _repo.GetStokBarangLogByDate(date, endDate);
     }
 
     public void ValidateModel(IStokBarangModel model)
