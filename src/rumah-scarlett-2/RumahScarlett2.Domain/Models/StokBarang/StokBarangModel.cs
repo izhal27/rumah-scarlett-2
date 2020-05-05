@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dp = Dapper.Contrib.Extensions;
 
 namespace RumahScarlett2.Domain.Models.StokBarang
 {
@@ -27,6 +28,7 @@ namespace RumahScarlett2.Domain.Models.StokBarang
 
     [Browsable(false)]
     [Display(Name = "Nama Barang")]
+    [Dp.Write(false)]
     public string barang_nama { get; set; }
 
     [DisplayFormat(DataFormatString = "{0:N0}")]
